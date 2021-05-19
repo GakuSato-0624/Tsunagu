@@ -1,3 +1,58 @@
 span {
     color: red;
+    font-size: smaller;
+}
+
+.copyright {
+    border-top: 1px solid #ccc;
+    text-align: center;
+    font-size: 5px;
+}
+
+.header-title {
+    text-align: center;
+}
+
+.register-form {
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 13px;
+    font-family: sans-serif;
+}
+
+.register-form .form-item {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.register-form .form-item .no-label {
+    padding: 5px 0px 5px 60px;
+}
+
+.register-form .form-item .label {
+    float: left;
+    padding: 5px;
+    margin-right: auto;
+}
+
+input[type=submit] {
+    border: none;
+    outline: none;
+    display: block;
+    line-height: 30px;
+    width: 160px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    background-color: #696;
+    border-bottom: 4px solid #464;
+    cursor:pointer;
+    box-sizing: content-box;
+    transition:0.3s ease all
+}
+
+input[type=submit]:hover{
+    border-bottom-width:0;
+    transform:translateY(4px)
 }
