@@ -1,11 +1,10 @@
 <?php
 session_start();
-session_regenerate_id(TRUE);
-if (isset($_SESSION['user_login']) == FALSE) {
-    print 'ログインされていません。';
-    print '<a href="user_login.html">ログイン</a>';
-    exit();
+$_SESSION = array();
+if (isset($_COOKIE['session_name()']) == TRUE) {
+    setcookie(session_name(), '', time()-42000, '/');
 }
+session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -19,16 +18,10 @@ if (isset($_SESSION['user_login']) == FALSE) {
 </head>
 <body>
     <header>
-        <?php
-        if (isset($_SESSION['user_login']) == TRUE) {
-            print '<p>'.$_SESSION['user_name'].'さんログイン中</p>';
-        }
-        ?>
         <h1>つなぐ</h1>
     </header>
     <main>
-        ログイン完了
-        <a href="user_logout.php">ログアウト</a>
+        <p>ログアウトしました。</p>
     </main>
     <footer>
         <p class="copyright">(c)ヒューマンウェア研究所</p>
