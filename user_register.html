@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +28,7 @@
                 <input type="text" name="email" id="email" required>
             </div>
             <div class="form-item">
-                <label class="label" for="password">パスワード<span>※</span>32文字以内の半角英数字</label>
+                <label class="label" for="password">パスワード<span>※</span>8～32文字の半角英数字</label>
                 <input type="password" name="password" id="password" required>
             </div>
             <div class="form-item">
@@ -202,7 +202,7 @@
                 <input type="submit" value="確認">
             </div>
         </form>
-        <script>
+        <!-- <script>
             var form = document.forms[0];
             form.onsubmit = function() {
                 // エラーメッセージをクリアする
@@ -217,7 +217,7 @@
             form.addEventListener("invalid", function() {
                 document.getElementById("errorMessage").innerHTML = "入力値にエラーがあります";
             }, false);
-        </script>
+        </script> -->
     </main>
     <footer>
         <p class="copyright">(c)ヒューマンウェア研究所</p>
