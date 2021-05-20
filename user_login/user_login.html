@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <title>つなぐ</title>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">つなぐ</h1>
+    </header>
+    <main>
+        <h2>ユーザーログイン</h2>
+        <form class="login-form" method="POST" action="user_login_check.php">
+            <div class="form-item">
+                <label class="label" for="email">email</label>
+                <input type="text" name="email" id="email" required>
+            </div>
+            <div class="form-item">
+                <label class="label" for="password">password</label>
+                <input type="password" name="password" required>
+            </div>
+            <div class="form-item no-label">
+                <input type="submit" value="確認"><br>
+            </div>
+        </form>
+        <a href="../user_register/user_register.html">ユーザー登録</a>
+    </main>
+    <footer>
+        <p class="copyright">(c)ヒューマンウェア研究所</p>
+    </footer>
+</body>
+</html>

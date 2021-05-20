@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/normalize.css">
     <title>つなぐ</title>
 </head>
 <body>
     <?php
-        require_once('./common/common.php');
+        require_once('../common/common.php');
         # サニタイジング
         $post = sanitize($_POST);
         # POST
@@ -33,7 +33,7 @@
         $flag = TRUE;
     ?>
     <header>
-
+        <h1>つなぐ</h1>
     </header>
     <main>
         <?php
@@ -49,6 +49,7 @@
             $flag = FALSE;
             print '<p style="color: red;">パスワードは8文字以上32文字以内の半角英数で設定してください。</p>';
         } else {
+            print $password;
             print '<p>パスワード: セキュリティ上表示しません。</p>';
         }
 
@@ -430,7 +431,9 @@
             print '<input type="button" onclick="history.back()" value="戻る">';
             print '</form>';
         } else {
-            print '上記の情報で登録します。';
+            $password = md5($password);
+            print $password;
+            print '<p>上記の情報で登録します。</p>';
             print '<form method="POST" action="user_register_done.php">';
             print '<input type="hidden" name="name" value="'.$name.'">';
             print '<input type="hidden" name="nickname" value="'.$nickname.'">';
@@ -445,7 +448,7 @@
             print '<input type="hidden" name="hope_prefecture" value="'.$hope_prefecture.'">';
             print '<input type="hidden" name="skill" value="'.$skill.'">';
             print '<input type="hidden" name="certification" value="'.$certification.'">';
-            print '<input type="button" onclick="history.back()" value="戻る">';
+            print '<input type="button" onclick="history.back()" value="戻る"><br>';
             print '<input type="submit" value="送信">';
             print '</form>';
         }
