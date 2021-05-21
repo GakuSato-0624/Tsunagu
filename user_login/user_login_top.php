@@ -1,11 +1,11 @@
 <?php
-session_start();
-session_regenerate_id(TRUE);
-if (isset($_SESSION['user_login']) == FALSE) {
-    print 'ログインされていません。';
-    print '<a href="user_login.html">ログイン</a>';
-    exit();
-}
+    session_start();
+    session_regenerate_id(TRUE);
+    if (isset($_SESSION['user_login']) == FALSE) {
+        print 'ログインされていません。';
+        print '<a href="user_login.html">ログイン</a>';
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -27,7 +27,7 @@ if (isset($_SESSION['user_login']) == FALSE) {
         <h1>つなぐ</h1>
     </header>
     <main>
-        ログイン完了
+        <p>ログイン完了</p>
         <a href="user_logout.php">ログアウト</a>
     </main>
     <footer>

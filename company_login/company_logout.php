@@ -1,3 +1,11 @@
+<?php
+session_start();
+$_SESSION = array();
+if (isset($_COOKIE['session_name()']) == TRUE) {
+    setcookie(session_name(), '', time()-42000, '/');
+}
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -10,10 +18,11 @@
 </head>
 <body>
     <header>
-        <h1 class="header-title">つなぐ</h1>
+        <h1>つなぐ</h1>
     </header>
     <main>
-
+        <p>ログアウトしました。</p>
+        <a href="company_login.html">ログイン</a>
     </main>
     <footer>
         <p class="copyright">(c)ヒューマンウェア研究所</p>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <title>つなぐ</title>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">つなぐ</h1>
+    </header>
+    <main>
+        <form method="POST" action="company_register_check.php" class="register-form">
+            <div class="form-item">
+                <label class="label" for="co-name">企業名</label>
+                <input type="text" name="company_name" id="co-name" required>
+            </div>
+            <div class="form-item">
+                <label class="label" for="email">email</label>
+                <input type="text" name="email" id="email" required>
+            </div>
+            <div class="form-item">
+                <label class="label" for="password">パスワード<span>※</span>8～32文字の半角英数字</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-item">
+                <label class="label" for="password2">もう一度入力してください。</label>
+                <input type="password" name="password_confirmation" id="password2" required>
+            </div>
+            <div class="form-item">
+                <label class="label" for="tel">電話番号<span>※</span>ハイフンあり</label>
+                <input type="text" name="tel" id="tel" required>
+            </div>
+            <div class="form-item">
+                <label class="label" for="dep">部署名</label>
+                <input type="text" name="department" id="dep">
+            </div>
+            <div class="form-item">
+                <label class="label" for="name">担当者様のお名前</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form-item no-label">
+                <input type="submit" value="確認">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p class="copyright">(c)ヒューマンウェア研究所</p>
+    </footer>
+</body>
+</html>

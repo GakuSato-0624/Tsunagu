@@ -10,31 +10,21 @@
 </head>
 <body>
     <header>
-        <h1>つなぐ</h1>
+        <h1 class="header-title">つなぐ</h1>
     </header>
     <main>
         <?php
         try {
             require_once('../common/common.php');
-            # サニタイジング
+
             $post = sanitize($_POST);
-            # POST
-            $name = $post['name'];
-            $nickname = $post['nickname'];
-            $email = $post['email'];
-            $user_password = $post['password'];
-            $tel = $post['tel'];
-            $sex = $post['sex'];
-            $age = $post['age'];
-            $academic_history = $post['academic_history'];
-            $prefecture = $post['prefecture'];
-            $city = $post['city'];
-            $hope_prefecture = $post['hope_prefecture'];
-            $skill = $post['skill'];
-            $certification = $post['certification'];
     
-            #flag
-            $flag = TRUE;
+            $company_name = $post['company_name'];
+            $email = $post['email'];
+            $company_password = $post['password'];
+            $tel = $post['tel'];
+            $department = $post['department'];
+            $name = $post['name'];
     
             $dsn = 'mysql:dbname=tsunagu;host=localhost;charset=utf8';
             $user = 'root';
@@ -42,33 +32,26 @@
             $dbh = new PDO($dsn, $user, $password);
             $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-            $sql = 'INSERT INTO users (name, nickname, email, password, tel, sex, age, academic_history, prefecture,
-                    city, hope_prefecture, skill, certification) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);';
+            $sql = 'INSERT INTO companies (company_name, email, password, tel, department, staff_name) VALUES (?, ?, ?, ?, ?, ?);';
             $stmt = $dbh -> prepare($sql);
-            $data[] = $name;
-            $data[] = $nickname;
+            $data[] = $company_name;
             $data[] = $email;
-            $data[] = $user_password;
+            $data[] = $company_password;
             $data[] = $tel;
-            $data[] = $sex;
-            $data[] = $age;
-            $data[] = $academic_history;
-            $data[] = $prefecture;
-            $data[] = $city;
-            $data[] = $hope_prefecture;
-            $data[] = $skill;
-            $data[] = $certification;
+            $data[] = $department;
+            $data[] = $name;
             $stmt -> execute($data);
     
             $dbh = null;
     
             print '<p>登録完了しました。</p>';
-            print '<a href="../user_login/user_login.html">ログイン</a>';
+            print '<a href="../company_login/company_login.html">ログイン</a>';
+
+
         } catch (Exception $e) {
             print 'ただいま障害が発生しております。申し訳ございません。';
             exit();
         }
-
         ?>
     </main>
     <footer>

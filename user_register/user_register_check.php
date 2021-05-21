@@ -49,7 +49,6 @@
             $flag = FALSE;
             print '<p style="color: red;">パスワードは8文字以上32文字以内の半角英数で設定してください。</p>';
         } else {
-            print $password;
             print '<p>パスワード: セキュリティ上表示しません。</p>';
         }
 
@@ -432,7 +431,6 @@
             print '</form>';
         } else {
             $password = md5($password);
-            print $password;
             print '<p>上記の情報で登録します。</p>';
             print '<form method="POST" action="user_register_done.php">';
             print '<input type="hidden" name="name" value="'.$name.'">';
