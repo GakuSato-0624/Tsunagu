@@ -28,6 +28,7 @@
     </header>
     <main>
         <p>ログイン完了</p>
+        <a href="../company_search/company_search.php">求職者検索</a>
         <a href="company_logout.php">ログアウト</a>
     </main>
     <footer>
